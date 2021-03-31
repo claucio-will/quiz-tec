@@ -8,13 +8,13 @@ class Resultado extends StatelessWidget {
 
   String get fraseResultado {
     if (pontuacao < 5) {
-      return 'Tente na proxima vez';
+      return 'TENTE OUTRA VEZ';
     } else if (pontuacao < 6) {
-      return 'Parabéns';
+      return 'PARABÉNS';
     } else if (pontuacao <= 7) {
-      return 'Parabens, continue treinando';
+      return 'ÓTIMO';
     } else {
-      return 'Parabéns você sabe tudo mesmo';
+      return 'EXCELENTE';
     }
   }
 
@@ -31,8 +31,10 @@ class Resultado extends StatelessWidget {
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
+                color: pontuacao < 5 ? Colors.red : Colors.green
               ),
               textAlign: TextAlign.center,
+              
             ),
           ),
           Text(
